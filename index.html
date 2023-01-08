@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Patrick+Hand" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="alertn alertb">
+        you have to login or sign in if you don't have an account
+   </div>
+   <div class="firstdiv">
+       <div>
+           <div class="pt_p">
+               <p class="pt_txt">Sign in</p>
+           </div>
+           <div class="pt_sign">
+               <div class="pt_tb">
+                   <table>
+                       <tr>
+                           <td class="pt_lbl">
+                               Username:
+                           </td>
+                           <td class="pt_input">
+                               <input type="text" placeholder="enter a username" id="username_adopt">
+                           </td>
+                       </tr>
+                       <tr>
+                           <td class="pt_lbl">
+                               email:
+                           </td>
+                           <td class="pt_input">
+                               <input type="email" placeholder="enter an email" id="email_adopt">
+                           </td>
+                       </tr>
+                       <tr>
+                           <td class="pt_lbl">
+                               password:
+                           </td>
+                           <td class="pt_input">
+                               <input type="password" placeholder="enter a password" id="password_adopt">
+                           </td>
+                       </tr>
+                       <tr>
+                           <td class="pt_lbl">
+                               country:
+                           </td>
+                           <td class="pt_input">
+                               <input type="text" placeholder="what is your country" id="country_adopt">
+                           </td>
+                       </tr>
+                       
+                   </table>
+               </div>
+               <div class="profile-pic-div">
+                   <img src="user.jpg" id="photo_sign_adopt" class="photo" >
+                   <input type="file" id="file_sign_adopt" class="file"accept="image/png, image/jpg" >
+               </div>
+           </div>
+           <button class="pt_cfrm" id="pt_cfrm_user_adopt">submit</button> 
+       </div>
+       
+   </div>  
+   <div class="seconddiv">
+       <div>
+           <div class="pt_p">
+               <p class="pt_txt">log in</p>
+           </div>
+           <div class="pt_sign">
+               <div class="pt_tb">
+                   <table>
+                       <tr>
+                           <td class="pt_lbl">
+                               Username:
+                           </td>
+                           <td class="pt_input">
+                               <input type="text" placeholder="enter a username" id="username_l_adopt">
+                           </td>
+                       </tr>
+                       <tr>
+                           <td class="pt_lbl">
+                               email:
+                           </td>
+                           <td class="pt_input">
+                               <input type="email" placeholder="enter an email" id="email_l_adopt">
+                           </td>
+                       </tr>
+                       <tr>
+                           <td class="pt_lbl">
+                               password:
+                           </td>
+                           <td class="pt_input">
+                               <input type="password" placeholder="enter a password" id="password_l_adopt">
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </div>
+           <button class="pt_cfrm" id="pt_cfrm_user_log_adopt">submit</button> 
+       </div>
+   </div>      
+    <nav>
+        <div class="main_nav">
+            <div class="scs_parent">
+                <ul class="scs">
+                    <li class="sc"><a href="index.html" id="lsc"><img src="./Untitled_Artwork.png" alt="animal" class="logo"></a></li>
+                    <li class="sc"><a href="index.html" id="wsc">FurryFriendsForever</a></li>
+                </ul>
+            </div>
+            <div class="scs_parent" style="padding-right: 2vw;">
+                <ul class="scs" >
+                    <li class="sc"><a href="save.html" class="scsi">Save<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/></svg></a></li>
+                    <li class="sc signd"><div class="scsi user"><p class="username"></p><img class="img_user"></div></li>
+                    <li class="sc sign"><button class="scsi signin">Sign in</button></li>
+                    <li class="sc log"><button class="scsi login">log in</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="second_div">
+            <ul class="second_diva" >
+                <li class="srln"><a href="what we do .html">Making a Difference</a></li>
+                <li class="srln"><a href="index.html">Adoption</a></li>
+                <li class="srln"><a href="put to addoption.html">Put to addoption</a></li>
+                <li class="srln"><a href="Indexy.html">Shop</a></li>
+                <li class="srln"><div><i class='bx bx-chevron-down'></i><p class="cry">Country</p></div>
+                    <ul class="dropdown">
+                        <li class="countryc">America</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="vs"></section>
+    <section class="chooscountry">
+        <ul class="">
+            <li class="choco"><div><p class="cry cry_chose"></p></div>
+                <ul class="dropdown dropdown_chose">
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section class="section-searchbar">
+        <div class="searchbar"><div class="icons-search"><i class="fa fa-search"></i></div><input type="text" placeholder="search a pet or a breed ot it" class="search_text"><div class="batton-search-div"><button type="submit" class="batton-search">Search</button></div></div>
+    </section>
+    <section class="main-section-in-animal-adoption"></section>
+    <!--<div class="animal-adoption">
+            <div class="animal-adoption_img">
+                <img src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTSPwOhXIZXZwMGCotRU2Lqflp5PJ4l8rYSzi-Yx68nNM3aR5DlOrb6PYYUiE_NT6q7oiR1RQilW8X95Kw" class="animal-adoption_img_img">
+            </div>
+            <div class="bookmark_price">
+                <i class="fa fa-bookmark-o" style="font-size:30px;"></i>
+                <p class="free_price">2000$</p>
+            </div>
+        </div>
+        <div class="animal-adoption">
+            <div class="animal-adoption_img">
+                <img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS_UhVxiWYmdCr1oQrZaBUEPcY8D93Fjocky8DGeRVDsejFFUmGSxlrhfIOin7td0uKetcHdsUkzW-npbafRpoChpBxQRwuIi0sTvNg1wON" class="animal-adoption_img_img">
+            </div>
+            <div class="bookmark_price">
+                <i class="fa fa-bookmark-o" style="font-size:30px;"></i>
+                <p class="free_price">2000$</p>
+            </div>
+        </div>
+        <div class="animal-adoption"><a href="./index2.html"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS_UhVxiWYmdCr1oQrZaBUEPcY8D93Fjocky8DGeRVDsejFFUmGSxlrhfIOin7td0uKetcHdsUkzW-npbafRpoChpBxQRwuIi0sTvNg1wON" alt="British Shorthair"></a><div><i class="fa fa-bookmark-o" style="font-size:30px;"></i><p>free</p></div></div>
+        <div class="animal-adoption"><a href="./index1.html"><img src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTSPwOhXIZXZwMGCotRU2Lqflp5PJ4l8rYSzi-Yx68nNM3aR5DlOrb6PYYUiE_NT6q7oiR1RQilW8X95Kw" alt="Sphynx cat"></a><div><i class="fa fa-bookmark-o" style="font-size:30px;"></i><p>2000$</p></div></div>
+        <div class="animal-adoption"><a href="./index2.html"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS_UhVxiWYmdCr1oQrZaBUEPcY8D93Fjocky8DGeRVDsejFFUmGSxlrhfIOin7td0uKetcHdsUkzW-npbafRpoChpBxQRwuIi0sTvNg1wON" alt="British Shorthair"></a><div><i class="material-icons" style="font-size:30px;">bookmark</i><p>free</p></div></div>
+        <div class="animal-adoption"><a href="./index1.html"><img src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTSPwOhXIZXZwMGCotRU2Lqflp5PJ4l8rYSzi-Yx68nNM3aR5DlOrb6PYYUiE_NT6q7oiR1RQilW8X95Kw" alt="Sphynx cat"></a><div><i class="material-icons" style="font-size:30px;">bookmark</i><p>2000$</p></div></div>
+        <div class="animal-adoption"><a href="./index2.html"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS_UhVxiWYmdCr1oQrZaBUEPcY8D93Fjocky8DGeRVDsejFFUmGSxlrhfIOin7td0uKetcHdsUkzW-npbafRpoChpBxQRwuIi0sTvNg1wON" alt="British Shorthair"></a><div><i class="material-icons" style="font-size:30px;">bookmark</i><p>free</p></div></div>
+        <div class="animal-adoption"><a href="./index1.html"><img src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTSPwOhXIZXZwMGCotRU2Lqflp5PJ4l8rYSzi-Yx68nNM3aR5DlOrb6PYYUiE_NT6q7oiR1RQilW8X95Kw" alt="Sphynx cat"></a><div><i class="material-icons" style="font-size:30px;">bookmark</i><p>2000$</p></div></div>
+        <div class="animal-adoption"><a href="./index2.html"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS_UhVxiWYmdCr1oQrZaBUEPcY8D93Fjocky8DGeRVDsejFFUmGSxlrhfIOin7td0uKetcHdsUkzW-npbafRpoChpBxQRwuIi0sTvNg1wON" alt="British Shorthair"></a><div><i class="material-icons" style="font-size:30px;">bookmark</i><p>free</p></div></div>
+        <div class="animal-adoption"><a href="./index1.html"><img src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTSPwOhXIZXZwMGCotRU2Lqflp5PJ4l8rYSzi-Yx68nNM3aR5DlOrb6PYYUiE_NT6q7oiR1RQilW8X95Kw" alt="Sphynx cat"></a><div><i class="material-icons" style="font-size:30px;">bookmark</i><p>2000$</p></div></div>
+        <div class="animal-adoption"><a href="./index2.html"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS_UhVxiWYmdCr1oQrZaBUEPcY8D93Fjocky8DGeRVDsejFFUmGSxlrhfIOin7td0uKetcHdsUkzW-npbafRpoChpBxQRwuIi0sTvNg1wON" alt="British Shorthair"></a><div><i class="material-icons" style="font-size:30px;">bookmark</i><p>free</p></div></div>
+        <div class="animal-adoption"><a href="./index2.html"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS_UhVxiWYmdCr1oQrZaBUEPcY8D93Fjocky8DGeRVDsejFFUmGSxlrhfIOin7td0uKetcHdsUkzW-npbafRpoChpBxQRwuIi0sTvNg1wON" alt="British Shorthair"></a><div><i class="fa fa-bookmark-o" style="font-size:30px;"></i><p>free</p></div></div>
+    -->
+      <section class="parent_of_parent_of_info_about_the_animal"></section>
+       <script src="datacollection_addoption.js"></script>
+</body>
+</html>

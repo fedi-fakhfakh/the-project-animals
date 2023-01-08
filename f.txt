@@ -1,0 +1,276 @@
+const div=document.createElement('div')
+const i=document.createElement('i')
+const p=document.createElement('p')
+const img=document.createElement('img')
+const button=document.createElement('button')
+
+const Pt_Submit=document.querySelector('.pt_cfrm')
+const breed=document.querySelector('#breed')
+const animal=document.querySelector('#animal')
+const price=document.querySelector('#price')
+const description=document.querySelector('#description')
+const phonenumber=document.querySelector('#phonenumber')
+const btnsignin=document.querySelector('.signin')
+const fdiv=document.querySelector('.firstdiv')
+const sdiv=document.querySelector('.seconddiv')
+const Pt_Submit_user=document.querySelector('#pt_cfrm_user_save')
+const country=document.querySelector('#country_save')
+const password=document.querySelector('#password_save')
+const email=document.querySelector('#email_save')
+const username=document.querySelector('#username_save')
+const photo=document.querySelector('#photo')
+const imgDiv=document.querySelector('.profile-pic-div')
+const file=document.querySelector('#file')
+const file_sign=document.querySelector('#file_sign_save')
+const photo_sign=document.querySelector('#photo_sign_save')
+
+let animalinfo=[['animal number#','img','the pet','breed','price','description','owner','email','phonenumber','country'],
+                [1,"http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTSPwOhXIZXZwMGCotRU2Lqflp5PJ4l8rYSzi-Yx68nNM3aR5DlOrb6PYYUiE_NT6q7oiR1RQilW8X95Kw","cat",'Sphynx cat','2000$',"this is my cat it's 5year old i want the adopter to take good care of it",'ali',"ali@gmail.com",'','italy'],
+                [2,"http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS_UhVxiWYmdCr1oQrZaBUEPcY8D93Fjocky8DGeRVDsejFFUmGSxlrhfIOin7td0uKetcHdsUkzW-npbafRpoChpBxQRwuIi0sTvNg1wON","cat","British Shorthai","free","he's 2 years old,he dosn't eat cooked food,please take care of him","fayz","fayz@gmail.com","","america"],
+                [3,"http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQkrjYxSfSHeCEA7hkPy8e2JphDsfFHZVKqx-3t37E4XKr-AT7DML8IwtwY0TnZsUcQ","dog","doggyyy","200$","he's 2 years old,he dosn't eat cooked food,please take care of him","fayz","fayz@gmail.com","","america"]
+               ];
+let pos_user;
+//input from sign in and put to adoption
+let userinfo=[['username','img','password','email','country','animal','bookmark','cart'],
+              ['ali','tomcruise.jpg','ali123','ali@gmail.com','italy',[1],[2],[]],
+              ['fayz',"dwaynejohnson.jpg",'fayz123','fayz@gmail.com','america',[2,3],[1],[]]
+             ];
+function popInfo(i_animalinfo){
+   const parent_of_info_about_the_animal=div.cloneNode(true)
+   parent_of_info_about_the_animal.setAttribute('class','parent_of_info_about_the_animal')
+   parent_of_info_about_the_animal.setAttribute('name',i_animalinfo)
+   const first_info_about_the_animal=div.cloneNode(true)
+   first_info_about_the_animal.setAttribute('class','first_info_about_the_animal')
+   const fa_close=i.cloneNode(true)
+   fa_close.setAttribute('class','fa fa-close')
+   fa_close.setAttribute('style',"font-size: 30px;") 
+   const second_info_about_the_animal=div.cloneNode(true) 
+   second_info_about_the_animal.setAttribute('class','second_info_about_the_animal')
+   const info_about_the_animal=div.cloneNode(true)
+   info_about_the_animal.setAttribute('class','info_about_the_animal')
+   const info_animal=p.cloneNode(true)
+   const text_info_animal=document.createTextNode('this animal is:' +`${animalinfo[i_animalinfo][2]}`)
+   info_animal.appendChild(text_info_animal.cloneNode(true))
+   info_animal.setAttribute('class','info_animal')
+   const info_breed=p.cloneNode(true)
+   const text_info_breed=document.createTextNode("it's a:" +`${animalinfo[i_animalinfo][3]}`)
+   info_breed.setAttribute('class','info_breed')
+   info_breed.appendChild(text_info_breed.cloneNode(true))
+   const info_price=p.cloneNode(true)
+   const text_info_price=document.createTextNode('this price is:'+`${animalinfo[i_animalinfo][4]}`)
+   info_price.appendChild(text_info_price.cloneNode(true))
+   info_price.setAttribute('class','info_price')
+   const info_description=p.cloneNode(true)
+   const text_info_description=document.createTextNode('few words from '+`${animalinfo[i_animalinfo][6]}`+' '+'about his pet:'+`${animalinfo[i_animalinfo][5]}`)
+   info_description.appendChild(text_info_description.cloneNode(true))
+   info_description.setAttribute('class','info_description')
+   const profile_contact=div.cloneNode(true)
+   profile_contact.setAttribute('class','profile_contact')
+   const img_btn_show_profile=div.cloneNode(true) 
+   img_btn_show_profile.setAttribute('class','img_btn_show_profile')
+   const img_profile=img.cloneNode(true)
+   img_profile.setAttribute('class','img_profile') 
+   for(let i=1;i < userinfo.length;i++){
+     if(userinfo[i][0] == animalinfo[i_animalinfo][6]){
+       img_profile.setAttribute('src',userinfo[i][1])
+     }
+   }
+   img_profile.setAttribute('style','width: 80px;height:100px;border-radius: 50%;overflow: hidden;')
+   const show_profile=button.cloneNode(true)
+   show_profile.setAttribute('class','show_profile')
+   const text_button=document.createTextNode("view the owner's profile")
+   show_profile.appendChild(text_button.cloneNode(true))
+   img_btn_show_profile.append(img_profile.cloneNode(true),show_profile.cloneNode(true))
+   const email_phone=div.cloneNode(true)
+   email_phone.setAttribute('class','email_phone')
+   const email_info=p.cloneNode(true)
+   email_info.setAttribute('class','email_info')
+   const text_email=document.createTextNode('you can contact him with this email: '+`${animalinfo[i_animalinfo][7]}`)
+   email_info.appendChild(text_email.cloneNode(true))
+   const phone_info=p.cloneNode(true)
+   phone_info.setAttribute('class','phone_info')
+   if(animalinfo[i_animalinfo][8].length == 0){
+     const text_phone=document.createTextNode("this user didn't put his phone number")  
+     phone_info.appendChild(text_phone.cloneNode(true))
+   }
+   else{
+   const text_phone=document.createTextNode('you can contact him with this email'+`${animalinfo[i_animalinfo][8]}`)
+   phone_info.appendChild(text_phone.cloneNode(true))
+ }  
+   email_phone.append(email_info.cloneNode(true),phone_info.cloneNode(true))
+   profile_contact.append(img_btn_show_profile.cloneNode(true),email_phone.cloneNode(true))
+  
+   const third_info_about_the_animal=div.cloneNode(true)
+   third_info_about_the_animal.setAttribute('class', 'third_info_about_the_animal')
+   third_info_about_the_animal.style.display='none'
+   for(let i=1;i < userinfo.length;i++){
+     if(userinfo[i][0] == animalinfo[i_animalinfo][6]){
+       for(let j=0;j < userinfo[i][5].length;j++){
+         console.log(i_animalinfo)
+         theAnimalCart(third_info_about_the_animal,`${animalinfo[userinfo[i][5][j]][4]}`,`${animalinfo[userinfo[i][5][j]][1]}`,`${userinfo[i][5][j]}`,'animal-adoption2')
+       }
+     }
+   }
+   const animal_adoption_img=div.cloneNode(true)
+   animal_adoption_img.setAttribute('class','animal-adoption_img')
+   const animal_adoption_img_img=img.cloneNode(true)
+   const bookmark_price=div.cloneNode(true)
+   bookmark_price.setAttribute('class','bookmark_price')
+   const fa_bookmark_o=i.cloneNode(true)
+   fa_bookmark_o.setAttribute('class','fa-bookmark-o')
+   fa_bookmark_o.setAttribute('src','font-size:30px;')
+   const free_price=p.cloneNode(true)
+   free_price.setAttribute('class','free_price')
+   
+   info_about_the_animal.append(info_animal.cloneNode(true),info_breed.cloneNode(true),info_price.cloneNode(true),info_description.cloneNode(true),profile_contact)
+   const img_info_animal=img.cloneNode(true)
+   img_info_animal.setAttribute('class','img_info_animal')
+   img_info_animal.setAttribute('src',animalinfo[i_animalinfo][1])
+   second_info_about_the_animal.append(info_about_the_animal.cloneNode(true),img_info_animal.cloneNode(true))
+   first_info_about_the_animal.append(fa_close.cloneNode(true),third_info_about_the_animal.cloneNode(true),second_info_about_the_animal.cloneNode(true))
+   parent_of_info_about_the_animal.appendChild(first_info_about_the_animal.cloneNode(true))
+   document.querySelector('.parent_of_parent_of_info_about_the_animal').appendChild(parent_of_info_about_the_animal.cloneNode(true))
+   
+}
+for(let i=1;i < animalinfo.length;i++){
+    popInfo(animalinfo[i][0]) 
+      
+}
+function theAnimalCart(whereto,the_text_entered,the_src,the_names,theclass){
+   const animal_adoption=div.cloneNode(true)
+   animal_adoption.setAttribute('class',theclass)
+   animal_adoption.setAttribute('name',the_names)
+   const animal_adoption_img=div.cloneNode(true)
+   animal_adoption_img.setAttribute('class','animal-adoption_img')
+   const animal_adoption_img_img=img.cloneNode(true)
+   animal_adoption_img_img.setAttribute('class','animal-adoption_img_img')
+   animal_adoption_img_img.setAttribute('src',the_src)
+   animal_adoption_img.appendChild(animal_adoption_img_img.cloneNode(true))
+   animal_adoption.appendChild(animal_adoption_img.cloneNode(true))
+   const bookmark_price=div.cloneNode(true)
+   bookmark_price.setAttribute('class','bookmark_price')
+   const fa_bookmark_o=i.cloneNode(true)
+   fa_bookmark_o.setAttribute('class','bx bx-bookmark')
+   fa_bookmark_o.setAttribute('style','font-size:30px')
+   const free_price=p.cloneNode(true)
+   free_price.setAttribute('class','free_price')
+   bookmark_price.appendChild(fa_bookmark_o.cloneNode(true))
+   const the_text=document.createTextNode(the_text_entered)
+   free_price.appendChild(the_text.cloneNode(true))
+   bookmark_price.appendChild(free_price.cloneNode(true))
+   animal_adoption.appendChild(bookmark_price.cloneNode(true))
+   whereto.appendChild(animal_adoption.cloneNode(true))
+ }
+file_sign.addEventListener('change', function(){
+    const reader= new FileReader();
+    reader.addEventListener('load',function(){
+        photo_sign.setAttribute('src',reader.result)
+    })
+    reader.readAsDataURL(this.files[0])
+  })
+btnsignin.addEventListener("click", function(){
+    fdiv.style.cssText="display:block"
+    Pt_Submit_user.addEventListener("click", function(){
+        if(photo_sign.getAttribute("src") == 'user.jpg'){
+            alert('change the photo')
+        }
+        if(username.value != 0 && email.value != 0 && password.value != 0 && country.value != 0 && photo_sign.getAttribute("src") != 'user.jpg'){
+            userinfo.push([username.value,photo_sign.getAttribute("src"),password.value,email.value,country.value,[],[],[]])
+            console.log(userinfo)
+            document.querySelector('.firstdiv').style.cssText="display:none"
+            document.querySelector('.signin').style.cssText="display:none"
+            document.querySelector('.login').style.cssText="display:none"
+             document.querySelector('.user').style.cssText="display:flex"
+            document.querySelector('.img_user').setAttribute('src',photo_sign.getAttribute("src"))
+            document.querySelector('.username').innerText=username.value
+            pos_user=userinfo.length-1
+        }
+        else{
+           alert('enter all the informations')
+        }
+    })
+  })
+  document.querySelector('.login').addEventListener("click", function(){
+    sdiv.style.cssText="display:block"
+    document.querySelector('#pt_cfrm_user_log_save').addEventListener("click", function(){
+        compare_tabl=[document.querySelector('#username_l_save').value,document.querySelector('#password_l_save').value,document.querySelector('#email_l_save').value]
+        if(document.querySelector('#username_l_save').value != 0 && document.querySelector('#password_l_save').value != 0 && document.querySelector('#email_l_save').value != 0){
+            for(var i=0;i < userinfo.length;i++) {
+                if(compare_tabl[0]==userinfo[i][0] && compare_tabl[1]==userinfo[i][2] && compare_tabl[2]==userinfo[i][3]){
+                    pos_user= i; 
+                    compare_tabl=[document.querySelector('#username_l_save').value,document.querySelector('#password_l_save').value,document.querySelector('#email_l_save').value] 
+                    document.querySelector('.img_user').setAttribute('src',userinfo[pos_user][1])
+                    document.querySelector('.username').innerText=userinfo[pos_user][0]
+                    document.querySelector('.seconddiv').style.cssText="display:none"
+                    document.querySelector('.signin').style.cssText="display:none"
+                    document.querySelector('.login').style.cssText="display:none"
+                    document.querySelector('.user').style.cssText="display:flex"
+                    if(pos_user != undefined){
+                        console.log(userinfo[pos_user][6].length)
+                        for(let i=0;i < userinfo[pos_user][6].length;i++){
+                            theAnimalCart(document.querySelector('.main-section-in-animal-adoption-save'),animalinfo[userinfo[pos_user][6][i]][4],animalinfo[userinfo[pos_user][6][i]][1],`${userinfo[pos_user][6][i]}`,'animal-adoption')
+                            for(let j=0;j < document.querySelectorAll('.animal-adoption2').length;j++){
+                                if(document.querySelectorAll('.animal-adoption2')[j].getAttribute('name') == `${userinfo[pos_user][6][i]}`){
+                                  document.querySelectorAll('.animal-adoption2')[j].childNodes[1].childNodes[0].classList.toggle('bxs-bookmark')
+                                }
+                              }
+                              for(let j=0;j < document.querySelectorAll('.animal-adoption').length;j++){
+                                if(document.querySelectorAll('.animal-adoption')[j].getAttribute('name') == `${userinfo[pos_user][6][i]}`){
+                                  document.querySelectorAll('.animal-adoption')[j].childNodes[1].childNodes[0].classList.toggle('bxs-bookmark')
+                                }
+                              }
+                                                  
+                            console.log('eyyyyyy')
+                            console.log(document.querySelector('.animal-adoption'))
+                        }
+                        for(let i=0;i < document.querySelectorAll('.bx-bookmark').length;i++){
+                            document.querySelectorAll('.bx-bookmark')[i].addEventListener('click',function(){
+                                  for(let j=0;j < document.querySelectorAll('.animal-adoption').length;j++){
+                                    if(document.querySelectorAll('.animal-adoption')[j].getAttribute('name') == document.querySelectorAll('.bx-bookmark')[i].parentElement.parentElement.getAttribute('name')){
+                                      document.querySelectorAll('.animal-adoption')[j].childNodes[1].childNodes[0].classList.toggle('bxs-bookmark')
+                                      if(document.querySelectorAll('.animal-adoption')[j].childNodes[1].childNodes[0].classList[document.querySelectorAll('.animal-adoption')[j].childNodes[1].childNodes[0].classList.length-1] == 'bxs-bookmark'){
+                                        userinfo[pos_user][6].push(parseInt(document.querySelectorAll('.animal-adoption')[j].getAttribute('name')))
+                                      }
+                                      else{
+                                        console.log(document.querySelectorAll('.animal-adoption')[j].getAttribute('name'))
+                                        for(let k=0;k < userinfo[pos_user][6].length;k++){
+                                          if(userinfo[pos_user][6][k] == document.querySelectorAll('.animal-adoption')[j].getAttribute('name')){
+                                            delete userinfo[pos_user][6][k]
+                                            
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                })}
+                                  
+                        for(let i=0;i < document.querySelectorAll('.animal-adoption').length;i++){
+                            console.log('awwwwwwwwwwo')
+                            document.querySelectorAll('.animal-adoption')[i].childNodes[0].addEventListener('click',function(){
+                              document.querySelectorAll('.parent_of_info_about_the_animal')[document.querySelectorAll('.animal-adoption_img')[i].parentElement.getAttribute('name')-1].style.display='block'
+     
+                            })  
+                          }
+                          
+                        
+                        console.log(document.querySelectorAll('.fa-close'))
+                        for(let i=0;i < document.querySelectorAll('.fa-close').length;i++){
+                          console.log('fayza')
+                          document.querySelectorAll('.fa-close')[i].addEventListener('click',function(){
+                            document.querySelectorAll('.fa-close')[i].parentElement.parentElement.style.display='none'
+                          })
+                        } 
+                        
+                    }
+                    break
+                }
+                if((i==userinfo.length-1) && (compare_tabl[0]!=userinfo[i][0] || compare_tabl[1]!=userinfo[i][2] || compare_tabl[2]!=userinfo[i][3])){
+                    alert('your username or email or password is wrong')
+                }
+            }
+        } 
+        else{
+            alert('enter all the informations')
+        }
+    })
+  })
